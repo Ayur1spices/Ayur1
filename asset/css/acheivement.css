@@ -1,0 +1,114 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1c0b0b;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Achievement Banner */
+.achievement-banner {
+    text-align: center;
+    background-color: #f1f1f1;
+    padding: 50px;
+}
+
+.achievement-banner h1 {
+    font-size: 2.5rem;
+    color: #333;
+    font-family: 'Playfair Display', serif;
+}
+
+.achievement-banner p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #666;
+    font-family: 'Lora', serif;
+}
+
+/* Achievements Section */
+.achievements {
+    padding: 40px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.achievement {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.achievement-icon img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.achievement-details h2 {
+    font-size: 1.8rem;
+    color: #333;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+}
+
+.achievement-details p {
+    font-size: 1rem;
+    color: #555;
+    font-family: 'Lora', serif;
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+}
+
+footer form {
+    margin-bottom: 20px;
+}
+
+footer input {
+    padding: 10px;
+    width: 250px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+footer button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+footer .social-links a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
