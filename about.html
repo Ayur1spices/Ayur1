@@ -3,215 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayur 1 Spices</title>
+    <title>About Us - FLAVEWELL Spices</title>
     <link rel="icon" type="image/png" href="asset/image/ayur-logoTitle.png">
 
+    <!-- External Libraries -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Roboto&display=swap" rel="stylesheet">
+
     <style>
-        /* Custom Header Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #fff8f0;
+            color: #333;
+            line-height: 1.7;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
         .navbar {
             padding: 15px 20px;
-            background: linear-gradient(135deg, #ffffff00 0%, #7e505000 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
         }
 
-        /* Adjusted Logo Styling */
         .logo img {
-            height: 50px; /* Adjusted height */
-            filter: drop-shadow(2px 4px 6px rgba(255, 255, 255, 0.186));
+            height: 50px;
         }
 
-        /* Navigation Menu Styling */
-        
-        .navbar-toggler{
-                border: none; /* Remove border */
-            }
-            .navbar-toggler .navbar-toggler-icon {
-                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M4 6h22M4 14h22M4 22h22'/%3E%3C/svg%3E"); /* Hamburger icon */
-            }
-            .navbar-toggler.collapsed .navbar-toggler-icon {
-                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M6 6L24 24M6 24L24 6'/%3E%3C/svg%3E"); /* X icon */
-            }
-            .navbar-toggler:not(.collapsed) .navbar-toggler-icon {
-                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M4 6h22M4 14h22M4 22h22'/%3E%3C/svg%3E"); /* Hamburger icon */
-            }
-            .navbar-toggler:focus {
-                outline: none; /* Remove focus outline */
-                box-shadow: none; /* Remove any box shadow */
-            }
-        /* Navigation Menu Styling */
         .nav-link {
-            color: #376701;
+            color: #2c3e50;
             font-family: 'Playfair Display', serif;
             font-weight: 600;
             font-size: 1.1em;
-            letter-spacing: 1.2px;
             text-transform: uppercase;
-            transition: color 0.3s, transform 0.2s;
+            margin-right: 20px;
             position: relative;
         }
 
         .nav-link::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background-color: #d4af37;
-    bottom: -4px;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: width 0.3s;
-}
-
-@media screen and (max-width: 975px) {
-    .nav-link::after {
-        display: none; /* Hides the pseudo-element entirely */
-    }
-}
-
-
-        .nav-link:hover {
-            color: #000000;
-            transform: translateY(-2px);
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #d4af37;
+            bottom: -4px;
+            left: 0;
+            transition: width 0.3s ease-in-out;
         }
 
         .nav-link:hover::after {
             width: 100%;
         }
 
-        /* Footer Styling */
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: #b93e00;
+            font-size: 2.5rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .card-container {
+            position: relative;
+        }
+
+        .card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 90%;
+            max-width: 1200px;
+            margin: 5rem auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(8px);
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.8s ease-out;
+        }
+
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card-img-container {
+            width: 40%;
+            padding-left: 20px;
+        }
+
+        .card-img-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+
+        .card-body {
+            width: 55%;
+        }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #b93e00;
+        }
+
+        .card-text {
+            font-size: 1.1rem;
+            color: #333;
+        }
+
         footer {
-            background-color: #426644;
+            background-color: #2f4f4f;
             color: #fff;
             padding: 20px 0;
         }
 
         .social-media a {
-            font-weight: bold;
-            font-size: medium;
             color: whitesmoke;
-            text-decoration: none;
-            transition: color 0.3s ease-in-out;
             margin: 0 10px;
+            transition: color 0.3s;
         }
 
-        .social-media .facebook:hover { color: rgb(17, 153, 194); }
-        .social-media .instagram:hover { color: rgb(248, 86, 221); }
-        .social-media .twitter:hover { color: rgb(17, 153, 194); }
-        .social-media .whatsapp:hover { color: rgb(45, 233, 70); }
+        .social-media a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <header class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
-                <!-- Logo -->
                 <a class="navbar-brand logo" href="#">
-                    <img src="asset/image/ayurlogo.png" alt="Ayur Spices">
+                    <img src="asset/image/ayurlogo.png" alt="FLAVEWELL Spices">
                 </a>
-
-                <!-- Responsive Toggle Button for Mobile Devices -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" onclick="this.classList.toggle('collapsed');">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
-                <!-- Collapsible Navigation -->
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav text-end">
-                        <li class="nav-item">
-                            <hr class="d-lg-none" />
-                          </li>
-                        <li class="nav-item">
-                            <a href="index.html" class="nav-link">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="gallery.html" class="nav-link">Gallery</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="about.html" class="nav-link">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="contact.html" class="nav-link">Contact Us</a>
-                        </li>
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
 
-    <!-- About Section -->
-    <section class="container my-5">
-        <h2 class="text-center">About FLAVWELL</h2>
-        <p class="text-center">
-            At FLAVWELL, we believe in the power of nature. Our mission is to provide the highest quality spices sourced from the best farms. With a commitment to sustainability and quality, we ensure that every product is a testament to our dedication to excellence.
-        </p>
-        <p class="text-center">
-            Our team is passionate about spices and their benefits, and we strive to share this passion with our customers. Join us on this flavorful journey!
-        </p>
-    </section>
+    <main class="card-container">
+        <div class="card"><div class="card-body"><h3 class="card-title">History of FLAVEWELL</h3><p class="card-text">FLAVEWELL's journey began in 1967 with a modest spice business founded by Mr. Saju's father in a small Indian town. Initially focused on high-quality cardamom, the business grew by emphasizing purity and trust. Over decades, FLAVEWELL became a symbol of traditional excellence, maintaining integrity while evolving into a household name. The legacy passed down generations is one of hard work, vision, and commitment to authentic flavors.</p></div><div class="card-img-container"><img src="asset/image/history.jpg" alt="History of FLAVEWELL"></div></div>
 
-    <main>
-        <div class="container">
-            <!-- #1 -->
-            <div class="row mb-4 ">
-                <div class="col-lg-6 col-md-6 col-12">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit officiis aperiam harum dolor fugit neque architecto adipisci tempora ut ea animi sint iure odio, debitis repudiandae tempore ratione obcaecati esse.</div>
-                <div class="col-lg-6">
-                    <img src="./asset/image/cardamom.png" class="img-thumbnail" alt="Cardomom">
-                </div>
-            </div>
-            <!-- #2 -->
-            <div class="row mt-3">
-                <div class="col-lg-6 col-md-6 col-12">
-                    <img src="./asset/image/cardamom.png" class="img-thumbnail" alt="Cardomom">
-                </div>
-                <div class="col-lg-6">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit officiis aperiam harum dolor fugit neque architecto adipisci tempora ut ea animi sint iure odio, debitis repudiandae tempore ratione obcaecati esse.</div>
-            </div>
-            <!-- #1 -->
-            <div class="row mb-4 ">
-                <div class="col-lg-6 col-md-6 col-12">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit officiis aperiam harum dolor fugit neque architecto adipisci tempora ut ea animi sint iure odio, debitis repudiandae tempore ratione obcaecati esse.</div>
-                <div class="col-lg-6">
-                    <img src="./asset/image/cardamom.png" class="img-thumbnail" alt="Cardomom">
-                </div>
-            </div>
-            <!-- #2 -->
-            <div class="row mt-3">
-                <div class="col-lg-6 col-md-6 col-12">
-                    <img src="./asset/image/cardamom.png" class="img-thumbnail" alt="Cardomom">
-                </div>
-                <div class="col-lg-6">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit officiis aperiam harum dolor fugit neque architecto adipisci tempora ut ea animi sint iure odio, debitis repudiandae tempore ratione obcaecati esse.</div>
-            </div>
-        </div>
+        <div class="card"><div class="card-body"><h3 class="card-title">Signature Spices</h3><p class="card-text">Our signature collection features the finest Indian spices—cardamom, turmeric, black pepper, nutmeg, mace, and dried ginger. Each spice is chosen for its aroma, taste, and medicinal properties. We use time-honored techniques to retain natural oils and health benefits. The spices go through rigorous sorting, cleaning, and drying to preserve their authenticity. Chefs and home cooks alike rely on FLAVEWELL to bring unmatched flavor and richness to dishes.</p></div><div class="card-img-container"><img src="asset/image/spices.jpg" alt="Signature Spices"></div></div>
+
+        <div class="card"><div class="card-body"><h3 class="card-title">Partnership with Farmers</h3><p class="card-text">FLAVEWELL takes pride in its direct relationships with farmers across India. By removing intermediaries, we ensure farmers receive fair pay and recognition for their efforts. This collaboration empowers local communities, promotes ethical sourcing, and ensures the spices are harvested sustainably. We support farmers with knowledge, tools, and modern agricultural practices, creating a win-win system for both cultivators and consumers.</p></div><div class="card-img-container"><img src="asset/image/farmers.jpg" alt="Partnership with Farmers"></div></div>
+
+        <div class="card"><div class="card-body"><h3 class="card-title">FLAVEWELL Across India</h3><p class="card-text">Our brand operates in key Indian states like Karnataka, Rajasthan, Maharashtra, Bihar, Delhi, and Odisha. These regions were chosen based on their unique agricultural climates and expertise in spice farming. By cultivating strong relationships with local producers in each region, FLAVEWELL ensures a steady supply of spices that reflect regional uniqueness. This strategy guarantees a consistent, high-quality product for every customer.</p></div><div class="card-img-container"><img src="asset/image/regions.jpg" alt="FLAVEWELL in Indian Regions"></div></div>
+
+        <div class="card"><div class="card-body"><h3 class="card-title">Vision for the Future</h3><p class="card-text">Looking ahead, FLAVEWELL envisions a future where tradition meets technology. With a revenue milestone of 60 crores, we plan to scale globally while maintaining our roots. We aim to introduce eco-friendly packaging, digitized supply chains, and AI-powered quality control. Sustainability, innovation, and authenticity will guide our journey forward, ensuring that every spice pack carries the legacy and future of FLAVEWELL.</p></div><div class="card-img-container"><img src="asset/image/future.jpg" alt="Vision for the Future"></div></div>
     </main>
 
-    <!-- Footer Section -->
     <footer class="text-center">
-        <!-- Footer Text -->
-        <p class="mb-3">&copy; 2024 FLAVWELL. All rights reserved.</p>
-        
-        <!-- Social Media Links -->
-        <div class="social-media mb-3 d-flex justify-content-center gap-3 flex-wrap">
-            <a href="#" class="facebook d-flex align-items-center gap-2">
-                <i class="bx bxl-facebook-square"></i> Facebook
-            </a>
-            <a href="#" class="instagram d-flex align-items-center gap-2">
-                <i class="bx bxl-instagram"></i> Instagram
-            </a>
-            <a href="#" class="twitter d-flex align-items-center gap-2">
-                <i class="bx bxl-twitter"></i> Twitter
-            </a>
-            <a href="#" class="whatsapp d-flex align-items-center gap-2">
-                <i class="bx bxl-whatsapp"></i> WhatsApp
-            </a>
+        <p class="mb-3">&copy; 2024 FLAVEWELL. All rights reserved.</p>
+        <div class="social-media mb-3 d-flex justify-content-center flex-wrap">
+            <a href="#" class="facebook"><i class="bx bxl-facebook-square"></i> Facebook</a>
+            <a href="#" class="instagram"><i class="bx bxl-instagram"></i> Instagram</a>
+            <a href="#" class="twitter"><i class="bx bxl-twitter"></i> Twitter</a>
+            <a href="#" class="whatsapp"><i class="bx bxl-whatsapp"></i> WhatsApp</a>
         </div>
-
-        <!-- Footer Navigation Links -->
         <div class="footer-nav d-flex justify-content-center gap-3 flex-wrap">
             <a href="#" class="text-white text-decoration-none">Privacy Policy</a>
             <a href="#" class="text-white text-decoration-none">Terms of Service</a>
         </div>
     </footer>
 
-    <!-- Bootstrap JavaScript -->
+    <script>
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+
+        document.querySelectorAll('.card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+njkndvkjkjfskjsjdskvskjjvsvkj
