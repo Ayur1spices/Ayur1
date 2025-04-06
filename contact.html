@@ -11,182 +11,10 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="asset/css/contact.css">
 
     <!-- AOS Animate On Scroll -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
-    <style>
-        /* Global Transitions */
-        a, button {
-            transition: all 0.3s ease-in-out;
-        }
-
-        .fade-in {
-            opacity: 0;
-            animation: fadeIn ease-in 1s;
-            animation-fill-mode: forwards;
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Contact Section */
-        .contact-section {
-            background-color: #f8f9fa;
-            padding: 40px 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact-box {
-            background-color: white;
-            padding: 30px 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            border: 2px solid #007bff;
-            transition: transform 0.4s ease;
-        }
-
-        .contact-item {
-            padding: 20px;
-            border-right: 1px solid #ddd;
-            transition: transform 0.3s ease;
-        }
-
-        .contact-item:last-child {
-            border-right: none;
-        }
-
-        .contact-item:hover {
-            transform: scale(1.05);
-        }
-
-        .contact-item h3 {
-            font-size: 22px;
-            color: #007bff;
-            margin-bottom: 15px;
-        }
-
-        .contact-item p {
-            font-size: 16px;
-            color: #555;
-        }
-
-        .contact-item a {
-            text-decoration: none;
-            color: #007bff;
-            font-weight: bold;
-        }
-
-        .contact-item a:hover {
-            text-decoration: underline;
-        }
-
-        .popup-loader {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: transparent;
-            padding: 20px;
-            display: none;
-            z-index: 1000;
-        }
-
-        .popup-loader img {
-            width: 200px;
-            height: auto;
-            animation: pulse 1.5s infinite ease-in-out;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.1); opacity: 0.7; }
-        }
-
-        .navbar {
-            padding: 15px 20px;
-            background: linear-gradient(135deg, #ffffff00 0%, #7e505000 100%);
-        }
-
-        .logo img {
-            height: 50px;
-            filter: drop-shadow(2px 4px 6px rgba(255, 255, 255, 0.186));
-        }
-
-        .navbar-toggler {
-            border: none;
-        }
-
-        .navbar-toggler .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M4 6h22M4 14h22M4 22h22'/%3E%3C/svg%3E");
-        }
-
-        .navbar-toggler:focus {
-            outline: none;
-            box-shadow: none;
-        }
-
-        .nav-link {
-            color: #376701;
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            font-size: 1.1em;
-            letter-spacing: 1.2px;
-            text-transform: uppercase;
-            transition: color 0.3s, transform 0.2s;
-            position: relative;
-        }
-
-        .nav-link::after {
-            content: "";
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background-color: #d4af37;
-            bottom: -4px;
-            left: 50%;
-            transform: translateX(-50%);
-            transition: width 0.3s;
-        }
-
-        @media screen and (max-width: 975px) {
-            .nav-link::after {
-                display: none;
-            }
-        }
-
-        .nav-link:hover {
-            color: #000000;
-            transform: translateY(-2px);
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        footer {
-            background-color: #426644;
-            color: #fff;
-            padding: 20px 0;
-        }
-
-        .social-media a {
-            font-weight: bold;
-            font-size: medium;
-            color: whitesmoke;
-            text-decoration: none;
-            transition: color 0.3s ease-in-out;
-            margin: 0 10px;
-        }
-
-        .social-media .facebook:hover { color: rgb(17, 153, 194); }
-        .social-media .instagram:hover { color: rgb(248, 86, 221); }
-        .social-media .twitter:hover { color: rgb(17, 153, 194); }
-        .social-media .whatsapp:hover { color: rgb(45, 233, 70); }
-    </style>
 </head>
 <body>
 
@@ -213,21 +41,25 @@
     </header>
 
     <!-- Title Section -->
-    <div class="row">
-        <div class="col-lg text-center my-5" data-aos="fade-up">
-            <h3>FlavWell</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-        </div>
-    </div>
-
-    <!-- Map Section -->
-    <div class="container-fluid py-3" data-aos="fade-up">
+    <div id="bg-wrapper">
+        <!-- Title Section -->
         <div class="row">
-            <div class="col-lg-12">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63546.450721292626!2d77.1727039297826!3d9.9583430675852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07a195b8f9c5f5%3A0xbe273d2f046977e!2sAYUR%201%20SPICES!5e0!3m2!1sen!2sin!4v1743823254130!5m2!1sen!2sin"width="100%" height="550" style="border:0;" allowfullscreen="" loading="lazy"> referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="col-lg text-center my-5" data-aos="fade-up">
+                <h3>FlavWell</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+            </div>
+        </div>
+    
+        <!-- Map Section -->
+        <div class="container-fluid py-3" data-aos="fade-up">
+            <div class="row">
+                <div class="col-lg-12">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63546.450721292626!2d77.1727039297826!3d9.9583430675852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07a195b8f9c5f5%3A0xbe273d2f046977e!2sAYUR%201%20SPICES!5e0!3m2!1sen!2sin!4v1743823254130!5m2!1sen!2sin"width="100%" height="550" style="border:0;" allowfullscreen="" loading="lazy"> referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
         </div>
     </div>
+    
 
     <!-- Contact Info Section -->
     <div class="container-fluid contact-section my-5">
@@ -278,13 +110,11 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="asset/js/function.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-    </script>
+    <script src="asset/js/function.js"></script>
+    <script src="asset/js/contact.js"></script>
+    
 </body>
 </html>
     
