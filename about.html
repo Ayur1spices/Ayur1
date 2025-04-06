@@ -17,6 +17,8 @@
             background-color: #fff8f0;
             color: #333;
             line-height: 1.7;
+            margin: 0;
+            overflow-x: hidden;
         }
 
         .navbar {
@@ -61,46 +63,56 @@
             margin: 2rem 0;
         }
 
+        .card-container {
+            position: relative;
+        }
+
         .card {
-            border: none;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
-            transition: transform 0.5s ease, box-shadow 0.5s ease;
             display: flex;
-            flex-direction: row;
             align-items: center;
+            justify-content: space-between;
+            width: 90%;
+            max-width: 1200px;
+            margin: 5rem auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(8px);
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
             opacity: 0;
-            transform: translateY(50px);
-            animation: fadeUp 1s ease forwards;
+            transform: translateY(100px);
+            transition: all 0.8s ease-out;
         }
 
-        .card:nth-child(even) {
-            flex-direction: row-reverse;
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        @keyframes fadeUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .card-img-container {
+            width: 40%;
+            padding-left: 20px;
         }
 
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-        }
-
-        .card-img-top {
-            width: 50%;
-            height: 100%;
-            object-fit: cover;
+        .card-img-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
         }
 
         .card-body {
-            width: 50%;
-            padding: 2rem;
+            width: 55%;
+        }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #b93e00;
+        }
+
+        .card-text {
+            font-size: 1.1rem;
+            color: #333;
         }
 
         footer {
@@ -142,48 +154,16 @@
         </nav>
     </header>
 
-    <main class="container my-5">
-        <h2>About FLAVEWELL</h2>
+    <main class="card-container">
+        <div class="card"><div class="card-body"><h3 class="card-title">History of FLAVEWELL</h3><p class="card-text">FLAVEWELL's journey began in 1967 with a modest spice business founded by Mr. Saju's father in a small Indian town. Initially focused on high-quality cardamom, the business grew by emphasizing purity and trust. Over decades, FLAVEWELL became a symbol of traditional excellence, maintaining integrity while evolving into a household name. The legacy passed down generations is one of hard work, vision, and commitment to authentic flavors.</p></div><div class="card-img-container"><img src="asset/image/history.jpg" alt="History of FLAVEWELL"></div></div>
 
-        <div class="card">
-            <img src="asset/image/history.jpg" class="card-img-top" alt="History of FLAVEWELL">
-            <div class="card-body">
-                <h3 class="card-title">History of FLAVEWELL</h3>
-                <p class="card-text">FLAVEWELL was born from humble beginnings. In 1967, Saju’s father envisioned a business rooted in trust, quality, and community connection. Starting with only cardamom, he built the business through direct engagement with farmers and consistent product excellence. Over the decades, FLAVEWELL evolved from a single shop into a respected name in India’s spice industry, reflecting the dedication and values of its founder.</p>
-            </div>
-        </div>
+        <div class="card"><div class="card-body"><h3 class="card-title">Signature Spices</h3><p class="card-text">Our signature collection features the finest Indian spices—cardamom, turmeric, black pepper, nutmeg, mace, and dried ginger. Each spice is chosen for its aroma, taste, and medicinal properties. We use time-honored techniques to retain natural oils and health benefits. The spices go through rigorous sorting, cleaning, and drying to preserve their authenticity. Chefs and home cooks alike rely on FLAVEWELL to bring unmatched flavor and richness to dishes.</p></div><div class="card-img-container"><img src="asset/image/spices.jpg" alt="Signature Spices"></div></div>
 
-        <div class="card">
-            <img src="asset/image/spices.jpg" class="card-img-top" alt="Spices in FLAVEWELL">
-            <div class="card-body">
-                <h3 class="card-title">Signature Spices</h3>
-                <p class="card-text">From vibrant turmeric to aromatic nutmeg, FLAVEWELL's spices are sourced with precision and care. We don’t just sell spices — we celebrate their cultural essence and flavor profiles. Each spice is handpicked from the most fertile farms, ensuring that every pinch delivers unmatched aroma, color, and nutritional benefits. Our spice line-up is a journey through India’s rich culinary heritage.</p>
-            </div>
-        </div>
+        <div class="card"><div class="card-body"><h3 class="card-title">Partnership with Farmers</h3><p class="card-text">FLAVEWELL takes pride in its direct relationships with farmers across India. By removing intermediaries, we ensure farmers receive fair pay and recognition for their efforts. This collaboration empowers local communities, promotes ethical sourcing, and ensures the spices are harvested sustainably. We support farmers with knowledge, tools, and modern agricultural practices, creating a win-win system for both cultivators and consumers.</p></div><div class="card-img-container"><img src="asset/image/farmers.jpg" alt="Partnership with Farmers"></div></div>
 
-        <div class="card">
-            <img src="asset/image/farmers.jpg" class="card-img-top" alt="Farmers in India">
-            <div class="card-body">
-                <h3 class="card-title">Partnership with Farmers</h3>
-                <p class="card-text">At FLAVEWELL, farmers are at the heart of everything we do. Our direct-from-farm approach allows us to uplift rural economies while maintaining the freshest produce. We invest in long-term relationships with cultivators, offering training, fair trade prices, and consistent demand. This farmer-first model ensures transparency, sustainability, and top-tier spice quality for our customers.</p>
-            </div>
-        </div>
+        <div class="card"><div class="card-body"><h3 class="card-title">FLAVEWELL Across India</h3><p class="card-text">Our brand operates in key Indian states like Karnataka, Rajasthan, Maharashtra, Bihar, Delhi, and Odisha. These regions were chosen based on their unique agricultural climates and expertise in spice farming. By cultivating strong relationships with local producers in each region, FLAVEWELL ensures a steady supply of spices that reflect regional uniqueness. This strategy guarantees a consistent, high-quality product for every customer.</p></div><div class="card-img-container"><img src="asset/image/regions.jpg" alt="FLAVEWELL in Indian Regions"></div></div>
 
-        <div class="card">
-            <img src="asset/image/regions.jpg" class="card-img-top" alt="FLAVEWELL in Indian Regions">
-            <div class="card-body">
-                <h3 class="card-title">FLAVEWELL Across India</h3>
-                <p class="card-text">FLAVEWELL’s reach stretches across India's spice heartlands — from the lush fields of North Bangalore to the vibrant farms of Odisha. This strategic network allows us to tap into regional specialties and seasonal yields. Our localized sourcing guarantees consistent freshness, regional authenticity, and a sustainable supply chain that benefits local economies and delights global kitchens.</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="asset/image/future.jpg" class="card-img-top" alt="Future Vision of FLAVEWELL">
-            <div class="card-body">
-                <h3 class="card-title">Vision for the Future</h3>
-                <p class="card-text">As a 60-crore brand today, FLAVEWELL remains rooted in its founding values while embracing innovation. Our future is focused on sustainable sourcing, tech-driven traceability, and global market expansion. We aim to educate consumers on spice purity and health benefits while expanding our footprint into new markets and cuisines. Our journey has just begun — with flavor, culture, and integrity at its core.</p>
-            </div>
-        </div>
+        <div class="card"><div class="card-body"><h3 class="card-title">Vision for the Future</h3><p class="card-text">Looking ahead, FLAVEWELL envisions a future where tradition meets technology. With a revenue milestone of 60 crores, we plan to scale globally while maintaining our roots. We aim to introduce eco-friendly packaging, digitized supply chains, and AI-powered quality control. Sustainability, innovation, and authenticity will guide our journey forward, ensuring that every spice pack carries the legacy and future of FLAVEWELL.</p></div><div class="card-img-container"><img src="asset/image/future.jpg" alt="Vision for the Future"></div></div>
     </main>
 
     <footer class="text-center">
@@ -200,6 +180,21 @@
         </div>
     </footer>
 
+    <script>
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+
+        document.querySelectorAll('.card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
