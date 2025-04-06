@@ -1,9 +1,9 @@
 // Hero background image rotation
 const bg = document.querySelector('.hero-bg');
 const images = [
-  '/asset/image/cinnamonb.png',
-  '/asset/image/dropcinnamon.png',
-  '/asset/image/cinnamon2.png'
+  'asset/image/cinnamonb.png',
+  'asset/image/dropcinnamon.png',
+  'asset/image/cinnamon2.png'
 ];
 
 let current = 0;
