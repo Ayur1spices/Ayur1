@@ -45,13 +45,19 @@ const loadCSS = (href) => {
   const navigateTo = async (page) => {
     const content = document.getElementById("main-content");
     if (!content) return;
+  
+    // Save the current page to sessionStorage
+    sessionStorage.setItem("lastPage", page);
+  
     content.style.opacity = 0;
   
     try {
       const response = await fetch(page);
       const html = await response.text();
       content.innerHTML = html;
-      AOS.refresh();
+  
+      // Reinitialize AOS if you’re using animations
+      if (AOS) AOS.refresh();
     } catch (err) {
       content.innerHTML = `<div class="p-5 text-center text-danger">Failed to load ${page}</div>`;
       console.error(err);
@@ -59,6 +65,16 @@ const loadCSS = (href) => {
       setTimeout(() => {
         content.style.opacity = 1;
       }, 100);
+    }
+  };
+  
+  window.onload = async function () {
+    const lastPage = sessionStorage.getItem("lastPage");
+  
+    if (lastPage) {
+      await navigateTo(lastPage); // load last visited page
+    } else {
+      await navigateTo("home.html"); // default only on first visit
     }
   };
   
@@ -77,7 +93,7 @@ const loadCSS = (href) => {
   
       // Load header and footer using jQuery
       $('#header').load("component/navbar.html", function () {
-        console.log("header is loaded");
+        // console.log("header is loaded");
         $("<link/>", {
             rel: "stylesheet",
             type: "text/css",
@@ -90,13 +106,15 @@ const loadCSS = (href) => {
             const page = $(this).data("page");
             if (page) {
                 await navigateTo(page);
+                $(".navbar-toggler").removeClass("collapsed").attr("aria-expanded", "false");
+                $(".navbar-collapse").removeClass("show");
             }
         });
     });
     
   
       $('#footer').load("component/footer.html", function () {
-        console.log("footer is loaded");
+        // console.log("footer is loaded");
         $("<link/>", {
           rel: "stylesheet",
           type: "text/css",
@@ -105,7 +123,10 @@ const loadCSS = (href) => {
       });
   
       // Load default page
-      await navigateTo("home.html");
+      // await navigateTo("home.html");
+
+      
+      
   
       // Initialize AOS
       AOS.init();

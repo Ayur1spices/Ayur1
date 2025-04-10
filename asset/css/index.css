@@ -1,0 +1,29 @@
+.spice-icon {
+    position: fixed;
+    font-size: 30px;
+    color: #aac4ab;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1000;
+
+    animation: float 6s infinite ease-in-out;
+    transition: opacity 2s ease, top 1s ease, left 1s ease;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+
+
+#global-loder{
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: white;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
