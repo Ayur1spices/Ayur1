@@ -1,34 +1,5 @@
-$(document).ready(function() {
 
-    $('#header').load("component/navbar.html", function() {
-
-    $("<link/>", {
-        rel: "stylesheet",
-        type: "text/css",
-        href: "asset/css/navbar.css"
-     }).appendTo("head");
-
-    });
-    
-    $('#footer').load("component/footer.html", function() {
-
-    $("<link/>", {
-        rel: "stylesheet",
-        type: "text/css",
-        href: "asset/css/footer.css"
-     }).appendTo("head");
-
-    });
-    
-
-
-
-        function learnMore() {
-            // console.log("Learn More");
-            window.location.href = "idukki.html";
-        }
-    
-});
+            
 
 
 

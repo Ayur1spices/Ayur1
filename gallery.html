@@ -3,101 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FLAVWELL</title>
-    <link rel="icon" type="image/png" href="asset/image/ayur-logoTitle.png">
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <style>
-        /* Custom Header Styling */
-        .navbar {
-            padding: 15px 20px;
-            background: linear-gradient(135deg, #ffffff00 0%, #7e505000 100%);
-        }
-
-        /* Adjusted Logo Styling */
-        .logo img {
-            height: 50px; /* Adjusted height */
-            filter: drop-shadow(2px 4px 6px rgba(255, 255, 255, 0.186));
-        }
-
-        /* Navigation Menu Styling */
-        .navbar-toggler {
-            border: none; /* Remove border */
-        }
-        .navbar-toggler .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M4 6h22M4 14h22M4 22h22'/%3E%3C/svg%3E"); /* Hamburger icon */
-        }
-        .navbar-toggler.collapsed .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M6 6L24 24M6 24L24 6'/%3E%3C/svg%3E"); /* X icon */
-        }
-        .navbar-toggler:not(.collapsed) .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M4 6h22M4 14h22M4 22h22'/%3E%3C/svg%3E"); /* Hamburger icon */
-        }
-        .navbar-toggler:focus {
-            outline: none; /* Remove focus outline */
-            box-shadow: none; /* Remove any box shadow */
-        }
-
-        .nav-link {
-            color: #376701;
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            font-size: 1.1em;
-            letter-spacing: 1.2px;
-            text-transform: uppercase;
-            transition: color 0.3s, transform 0.2s;
-            position: relative;
-        }
-
-        .nav-link::after {
-            content: "";
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background-color: #d4af37;
-            bottom: -4px;
-            left: 50%;
-            transform: translateX(-50%);
-            transition: width 0.3s;
-        }
-
-        @media screen and (max-width: 975px) {
-            .nav-link::after {
-                display: none; /* Hides the pseudo-element entirely */
-            }
-        }
-
-        .nav-link:hover {
-            color: #000000;
-            transform: translateY(-2px);
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        /* Footer Styling */
-        footer {
-            background-color: #426644;
-            color: #fff;
-            padding: 20px 0;
-        }
-
-        .social-media a {
-            font-weight: bold;
-            font-size: medium;
-            color: whitesmoke;
-            text-decoration: none;
-            transition: color 0.3s ease-in-out;
-            margin: 0 10px;
-        }
-
-        .social-media .facebook:hover { color: rgb(17, 153, 194); }
-        .social-media .instagram:hover { color: rgb(248, 86, 221); }
-        .social-media .twitter:hover { color: rgb(17, 153, 194); }
-        .social-media .whatsapp:hover { color: rgb(45, 233, 70); }
-
+        
         /* Body Background */
         body {
             background: linear-gradient(135deg, #f5f9f5 0%, #e6f2e6 100%);
@@ -235,42 +142,6 @@
     </style>
 </head>
 <body>
-    <header class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <!-- Logo -->
-                <a class="navbar-brand logo" href="#">
-                    <img src="asset/image/ayurlogo.png" alt="Ayur Spices">
-                </a>
-
-                <!-- Responsive Toggle Button for Mobile Devices -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" onclick="this.classList.toggle('collapsed');">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- Collapsible Navigation -->
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav text-end">
-                        <li class="nav-item">
-                            <hr class="d-lg-none" />
-                          </li>
-                        <li class="nav-item">
-                            <a href="index.html" class="nav-link">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="gallery.html" class="nav-link">Gallery</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="about.html" class="nav-link">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="contact.html" class="nav-link">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
 
 
 
@@ -324,34 +195,9 @@
     </section>
 
     <!-- Footer Section -->
-    <footer class="text-center">
-        <!-- Footer Text -->
-        <p class="mb-3">© 2024 FLAVWELL. All rights reserved.</p>
-        
-        <!-- Social Media Links -->
-        <div class="social-media mb-3 d-flex justify-content-center gap-3 flex-wrap">
-            <a href="#" class="facebook d-flex align-items-center gap-2">
-                <i class="bx bxl-facebook-square"></i> Facebook
-            </a>
-            <a href="#" class="instagram d-flex align-items-center gap-2">
-                <i class="bx bxl-instagram"></i> Instagram
-            </a>
-            <a href="#" class="twitter d-flex align-items-center gap-2">
-                <i class="bx bxl-twitter"></i> Twitter
-            </a>
-            <a href="#" class="whatsapp d-flex align-items-center gap-2">
-                <i class="bx bxl-whatsapp"></i> WhatsApp
-            </a>
-        </div>
-
-        <!-- Footer Navigation Links -->
-        <div class="footer-nav d-flex justify-content-center gap-3 flex-wrap">
-            <a href="#" class="text-white text-decoration-none">Privacy Policy</a>
-            <a href="#" class="text-white text-decoration-none">Terms of Service</a>
-        </div>
-    </footer>
+    
 
     <!-- Bootstrap JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script> -->
 </body>
 </html>
