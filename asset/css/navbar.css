@@ -1,0 +1,66 @@
+.navbar {
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #ffffff00 0%, #7e505000 100%);
+}
+
+/* Adjusted Logo Styling */
+.logo img {
+    height: 50px; /* Adjusted height */
+    filter: drop-shadow(2px 4px 6px rgba(255, 255, 255, 0.186));
+}
+
+/* Navigation Menu Styling */
+.navbar-toggler {
+    border: none; /* Remove border */
+}
+.navbar-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M4 6h22M4 14h22M4 22h22'/%3E%3C/svg%3E"); /* Hamburger icon */
+}
+.navbar-toggler.collapsed .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M6 6L24 24M6 24L24 6'/%3E%3C/svg%3E"); /* X icon */
+}
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M4 6h22M4 14h22M4 22h22'/%3E%3C/svg%3E"); /* Hamburger icon */
+}
+.navbar-toggler:focus {
+    outline: none; /* Remove focus outline */
+    box-shadow: none; /* Remove any box shadow */
+}
+
+.nav-link {
+    color: #376701;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 1.1em;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: color 0.3s, transform 0.2s;
+    position: relative;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #d4af37;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s;
+}
+
+@media screen and (max-width: 975px) {
+    .nav-link::after {
+        display: none; /* Hides the pseudo-element entirely */
+    }
+}
+
+.nav-link:hover {
+    color: #000000;
+    transform: translateY(-2px);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}

@@ -1,0 +1,19 @@
+footer {
+    background-color: #426644;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.social-media a {
+    font-weight: bold;
+    font-size: medium;
+    color: whitesmoke;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    margin: 0 10px;
+}
+
+.social-media .facebook:hover { color: rgb(17, 153, 194); }
+.social-media .instagram:hover { color: rgb(248, 86, 221); }
+.social-media .twitter:hover { color: rgb(17, 153, 194); }
+.social-media .whatsapp:hover { color: rgb(45, 233, 70); }
