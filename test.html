@@ -1,76 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banking Doughnut Chart</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        /* Center Chart */
-        #chart-container {
-            width: 300px;  /* Adjust size */
-            height: 300px;
-            margin: auto;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Ayur 1 Spices</title>
+  <link rel="icon" type="image/png" href="asset/image/ayur-logoTitle.png">
 
-        canvas {
-            width: 100% !important;
-            height: 100% !important;
-        }
-    </style>
+  <!-- CSS & Libraries -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="asset/css/contact.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
 
-    <div id="chart-container">
-        <canvas id="bankChart"></canvas>
+  <!-- Header Section -->
+  <div class="container-fluid bg-success text-white py-4 text-center">
+    <h1 class="mb-1">Ayur 1 Spices</h1>
+    <p class="mb-0">Authentic Indian Flavors, Delivered with Purity</p>
+  </div>
+
+  <!-- Contact Intro Section -->
+  <div class="container my-5" data-aos="fade-up">
+    <div class="text-center">
+      <h2 class="fw-bold text-success">Let's Connect!</h2>
+      <p class="lead mt-3">
+        Got questions, feedback, or looking for partnership? Reach out to us!<br />
+        Whether it's bulk orders, store enquiries, or simple feedback — we're listening.
+      </p>
+      <a href="#contact-info" class="btn btn-success px-4 py-2 mt-3">Get in Touch</a>
     </div>
-    <button id="updateChart">Update Data</button>
+  </div>
 
-    <script>
-        $(document).ready(function () {
-            // Initial Banking Data
-            let bankingData = {
-                labels: ["Investment", "Due Amount", "Account Balance"],
-                datasets: [{
-                    data: [5000, 2000, 8000], // Sample values
-                    backgroundColor: ["#36A2EB", "#FF6384", "#4BC0C0"]
-                }]
-            };
+  <!-- Why Contact Us -->
+  <div class="container my-5" data-aos="fade-up">
+    <h3 class="text-center fw-bold text-success mb-4">We’re Here For You</h3>
+    <div class="row text-center">
+      <div class="col-md-4 mb-4">
+        <i class="bi bi-bag-check display-5 text-success"></i>
+        <h5 class="mt-2">Bulk & Wholesale Orders</h5>
+        <p>Supplying restaurants, stores, and kitchens across India.</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <i class="bi bi-envelope display-5 text-success"></i>
+        <h5 class="mt-2">Customer Support</h5>
+        <p>Need help with an order or product? We’re just a message away.</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <i class="bi bi-handshake display-5 text-success"></i>
+        <h5 class="mt-2">Business Collaborations</h5>
+        <p>Partner with Ayur 1 Spices for distribution or co-branding.</p>
+      </div>
+    </div>
+  </div>
 
-            // Create Doughnut Chart
-            let ctx = document.getElementById("bankChart").getContext("2d");
-            let bankChart = new Chart(ctx, {
-                type: 'doughnut',
-                data: bankingData,
-                options: {
-                    responsive: false,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: "bottom"
-                        }
-                    }
-                }
-            });
+  <!-- Google Map Section -->
+  <div class="container-fluid" data-aos="fade-up">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63546.450721292626!2d77.1727039297826!3d9.9583430675852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07a195b8f9c5f5%3A0xbe273d2f046977e!2sAYUR%201%20SPICES!5e0!3m2!1sen!2sin!4v1743823254130!5m2!1sen!2sin"
+      width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
 
-            // Function to Update Chart with Random Data
-            function updateBankChart() {
-                bankingData.datasets[0].data = [
-                    Math.floor(Math.random() * 10000), // Investment
-                    Math.floor(Math.random() * 5000),  // Due Amount
-                    Math.floor(Math.random() * 15000)  // Account Balance
-                ];
-                console.log(bankingData)
-                bankChart.update(); // Refresh chart
-            }
+  <!-- Contact Info -->
+  <div id="contact-info" class="container-fluid contact-section my-5">
+    <h3 class="text-center mb-5" data-aos="zoom-in">Reach Us At</h3>
+    <div class="row contact-box border text-center mx-3" data-aos="fade-up">
+      <div class="col-lg-3 contact-item my-4">
+        <h5 class="fw-bold">Address</h5>
+        <p>AYUR 1 SPICES</p>
+        <p>No. 1, Koramangala, Bangalore - 560034</p>
+      </div>
+      <div class="col-lg-3 contact-item my-4">
+        <h5 class="fw-bold">Phone</h5>
+        <p>080-25521111</p>
+        <p>+91-9876543210</p>
+      </div>
+      <div class="col-lg-3 contact-item my-4">
+        <h5 class="fw-bold">Email</h5>
+        <p><a href="mailto:info@ayur1spices.com">info@ayur1spices.com</a></p>
+      </div>
+      <div class="col-lg-3 contact-item my-4">
+        <h5 class="fw-bold">Working Hours</h5>
+        <p>Mon–Fri: 9 AM - 6 PM</p>
+        <p>Sat: 9 AM - 1 PM</p>
+        <p>Sun: Closed</p>
+      </div>
+    </div>
+  </div>
 
-            // Update Chart on Button Click
-            $("#updateChart").click(function () {
-                updateBankChart();
-            });
-        });
-    </script>
+  <!-- Loader -->
+  <div id="loader" class="popup-loader d-none">
+    <img src="asset/video/loading.gif" alt="Loading..." />
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center bg-dark text-white py-4" data-aos="fade-up">
+    <p class="mb-2">&copy; 2024 Ayur 1 Spices. All rights reserved.</p>
+    <div class="social-media d-flex justify-content-center gap-3 flex-wrap">
+      <a href="#" class="text-white text-decoration-none"><i class="bx bxl-facebook"></i> Facebook</a>
+      <a href="#" class="text-white text-decoration-none"><i class="bx bxl-instagram"></i> Instagram</a>
+      <a href="#" class="text-white text-decoration-none"><i class="bx bxl-twitter"></i> Twitter</a>
+      <a href="#" class="text-white text-decoration-none"><i class="bx bxl-whatsapp"></i> WhatsApp</a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 
 </body>
 </html>
