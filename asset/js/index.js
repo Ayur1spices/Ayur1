@@ -1,30 +1,13 @@
-function fadeAndMoveIcons() {
+document.addEventListener('DOMContentLoaded', () => {
     const icons = document.querySelectorAll('.spice-icon');
-
-    icons.forEach((icon, index) => {
-        // STEP 1: Fade In at Current Position
-        icon.style.opacity = 1;
-
-        // STEP 2: After 10s, Fade Out
-        setTimeout(() => {
-            icon.style.opacity = 0;
-        }, 10000 + index * 500); // staggered delay if needed
-
-        // STEP 3: After fade out (~12s), Change Position
-        setTimeout(() => {
-            const top = Math.random() * 90;
-            const left = Math.random() * 90;
-            icon.style.top = `${top}%`;
-            icon.style.left = `${left}%`;
-        }, 12000 + index * 500);
-
-        // STEP 4: Fade In again at new position
-        setTimeout(() => {
-            icon.style.opacity = 1;
-        }, 13000 + index * 500);
+    icons.forEach(icon => {
+      const randomLeft = Math.random() * window.innerWidth;
+      const fallDuration = 5 + Math.random() * 5; // Duration between 5s and 10s
+      const floatDuration = 3 + Math.random() * 3; // Duration between 3s and 6s
+  
+      icon.style.left = `${randomLeft}px`;
+      icon.style.animationDuration = `${fallDuration}s, ${floatDuration}s`;
+      icon.style.opacity = 1;
     });
-}
-
-// Start loop every 15s
-setInterval(fadeAndMoveIcons, 15000);
-setTimeout(fadeAndMoveIcons, 1000); // Initial start
+  });
+  

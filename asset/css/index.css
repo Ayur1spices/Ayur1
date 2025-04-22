@@ -1,29 +1,31 @@
-.spice-icon {
-    position: fixed;
+/* .spice-icon {
+    position: absolute;
     font-size: 30px;
     color: #aac4ab;
     opacity: 0;
     pointer-events: none;
     z-index: 1000;
+    animation: fall 10s linear infinite, float 6s infinite ease-in-out;
+}
 
-    animation: float 6s infinite ease-in-out;
-    transition: opacity 2s ease, top 1s ease, left 1s ease;
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(50px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+} */
 
-
-
-#global-loder{
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: white;
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+ *{
+    font-family: 'Merriweather', serif !important;
 }
