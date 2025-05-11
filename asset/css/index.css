@@ -27,5 +27,34 @@
 } */
 
  *{
-    font-family: 'Merriweather', serif !important;
+    /* font-family: 'Merriweather', serif !important; */
 }
+body {
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .light-mode {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  .dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  #toggle-theme {
+    padding: 10px 20px;
+    margin: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+  }
+  
+  #toggle-theme:hover {
+    background-color: #666; /* Lighten the button when hovered */
+  }
+  
+  

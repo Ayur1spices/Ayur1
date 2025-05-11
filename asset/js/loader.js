@@ -117,7 +117,8 @@ const loadCSS = (href) => {
       await loadScript("https://code.jquery.com/jquery-3.6.0.min.js");
       await loadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js");
       await loadScript("https://unpkg.com/aos@2.3.1/dist/aos.js");
-  
+      // await loadScript("asset/js/index.js");
+      
       // Load header and footer using jQuery
       $('#header').load("component/navbar.html", function () {
         // console.log("header is loaded");
@@ -137,6 +138,7 @@ const loadCSS = (href) => {
                 $(".navbar-collapse").removeClass("show");
             }
         });
+
     });
     
   
@@ -148,7 +150,19 @@ const loadCSS = (href) => {
           href: "asset/css/footer.css"
         }).appendTo("head");
       });
-  
+      
+      // const loadMyScripts = async () => {
+      //   try {
+      //     await loadScript("asset/js/loader.js");
+      //     console.log("loader.js loaded ✅");
+      //   } catch (error) {
+      //     console.error(error);
+      //   }
+      // };
+
+
+
+
       // Load default page
       // await navigateTo("home.html");
 
@@ -174,4 +188,4 @@ const loadCSS = (href) => {
     // console.log("Learn More");
     window.location.href = "idukki.html";
 }
-  
+
