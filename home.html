@@ -74,36 +74,9 @@
             100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
         }
 
-        /* Preloader */
-        .preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--forest-green);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-            transition: opacity 1.5s ease, transform 1.5s ease;
-        }
 
-        .preloader.hidden {
-            opacity: 0;
-            transform: scale(1.1);
-            pointer-events: none;
-        }
 
-        .preloader-logo {
-            width: 130px;
-            animation: spinGlow 2.5s ease-in-out infinite;
-        }
 
-        @keyframes spinGlow {
-            0%, 100% { transform: rotate(0deg) scale(1); filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5)); }
-            50% { transform: rotate(360deg) scale(1.2); filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.8)); }
-        }
 
         /* Hero Section */
         .hero {
@@ -905,10 +878,7 @@
     </style>
 </head>
 <body>
-    <!-- Preloader -->
-    <div class="preloader">
-        <img src="asset/image/ayur-logoTitle.png" alt="FLAVWELL Logo" class="preloader-logo">
-    </div>
+
 
     <!-- Hero Section -->
     <section class="hero">
