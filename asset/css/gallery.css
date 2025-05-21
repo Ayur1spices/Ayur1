@@ -29,7 +29,9 @@
             font-family: 'Playfair Display', serif;
             font-size: 36px;
             color: #2c4f2c;
-            display: inline-block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             position: relative;
             margin-bottom: 15px;
             font-weight: 700;
