@@ -1,115 +1,347 @@
-body {
-    background: linear-gradient(135deg, #f5f9f5 0%, #e6f2e6 100%);
-    min-height: 100vh;
-}
-
-/* Card and Description Styling */
-.card {
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    height: 100%;
-    border: 2px solid #426644;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-.card:hover, .card:focus-within {
-    transform: scale(1.05);
-}
-
-.card-img-top {
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-}
-
-.card-img-top:hover {
-    opacity: 0.8;
-}
-
-.card-title {
-    font-size: 1.25rem;
-    color: #376701;
-    text-align: center;
-    margin-top: 15px;
-}
-
-.award-description {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(66, 102, 68, 0.9); /* Semi-transparent green */
-    color: #fff;
-    padding: 15px;
-    text-align: center;
-    font-size: 14px;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-    max-height: 150px; /* Limit height to prevent overflow */
-    overflow-y: auto;
-}
-
-.card:hover .award-description, .card:focus-within .award-description {
-    transform: translateY(0);
-}
-
-/* Ensure description is clickable/tappable on touch devices */
-@media (hover: none) and (pointer: coarse) {
-    .card {
-        cursor: pointer;
-    }
-
-    .card:active .award-description {
-        transform: translateY(0);
-    }
-}
-
-/* Animated Spice Icons */
-
-/* Card Entrance Animation */
-.card {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: slideUp 0.8s ease-out forwards;
-}
-
-.card:nth-child(2) { animation-delay: 0.2s; }
-.card:nth-child(3) { animation-delay: 0.4s; }
-
-@keyframes slideUp {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-/* Line-by-Line Text Reveal Animation */
-.reveal-text {
-    overflow: hidden;
-    text-align: left; /* Left alignment */
-}
-
-.reveal-text p {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s ease-in-out forwards;
-}
-
-.reveal-text p span {
-    display: block; /* Each line is treated as a block */
-}
-
-.reveal-text p span:nth-child(1) { animation-delay: 0.5s; }
-.reveal-text p span:nth-child(2) { animation-delay: 1s; }
-.reveal-text p span:nth-child(3) { animation-delay: 1.5s; }
-.reveal-text p span:nth-child(4) { animation-delay: 2s; }
-
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f9f5 0%, #e6f2e6 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: #2c4f2c;
+            display: inline-block;
+            position: relative;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .section-title h2::after {
+            content: "";
+            position: absolute;
+            height: 3px;
+            width: 70%;
+            background: linear-gradient(90deg, transparent, #376701, transparent);
+            bottom: -10px;
+            left: 15%;
+        }
+        
+        .section-title .spice-icon {
+            font-size: 24px;
+            color: #376701;
+            margin: 0 8px;
+            opacity: 0.7;
+        }
+        
+        .intro-text {
+            max-width: 800px;
+            margin: 0 auto 50px;
+            position: relative;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .intro-text::before {
+            content: "\"";
+            font-family: 'Playfair Display', serif;
+            font-size: 80px;
+            color: rgba(55, 103, 1, 0.1);
+            position: absolute;
+            top: -20px;
+            left: 10px;
+        }
+        
+        .intro-text p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #444;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .intro-text p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -15px;
+            justify-content: center;
+        }
+        
+        .col {
+            flex: 0 0 calc(33.333% - 30px);
+            margin: 15px;
+            max-width: calc(33.333% - 30px);
+        }
+        
+        @media (max-width: 992px) {
+            .col {
+                flex: 0 0 calc(50% - 30px);
+                max-width: calc(50% - 30px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .col {
+                flex: 0 0 calc(100% - 30px);
+                max-width: calc(100% - 30px);
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
+            }
+            
+            .intro-text {
+                padding: 20px;
+            }
+        }
+        
+        .award-card {
+            position: relative;
+            height: 450px;
+            perspective: 1500px;
+            margin-bottom: 30px;
+        }
+        
+        .award-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+        }
+        
+        .award-card:hover .award-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .award-card-front, .award-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .award-card-front {
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid rgba(55, 103, 1, 0.3);
+        }
+        
+        .award-card-back {
+            background: linear-gradient(145deg, #3a7104, #214101);
+            color: white;
+            transform: rotateY(180deg);
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .award-image {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .award-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.5s;
+        }
+        
+        .award-card:hover .award-image img {
+            transform: scale(1.1);
+        }
+        
+        .award-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #376701;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        
+        .award-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .award-title {
+            font-family: 'Playfair Display', serif;
+            color: #2c4f2c;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 15px;
+            text-align: center;
+        }
+        
+        .award-title::after {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: #376701;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .award-year {
+            color: #666;
+            font-weight: 500;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .flip-hint {
+            font-size: 12px;
+            color: #888;
+            text-align: center;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .flip-hint i {
+            margin-left: 5px;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        .award-card-back h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .award-description {
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+        
+        .award-presenter {
+            font-style: italic;
+            font-size: 14px;
+            opacity: 0.9;
+            margin-top: auto;
+        }
+        
+        .award-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Animation for cards */
+        .award-card {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .award-card:nth-child(1) { animation-delay: 0.3s; }
+        .award-card:nth-child(2) { animation-delay: 0.5s; }
+        .award-card:nth-child(3) { animation-delay: 0.7s; }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Text appear animation */
+        .text-reveal {
+            overflow: hidden;
+        }
+        
+        .text-reveal p {
+            opacity: 0;
+            animation: textReveal 0.8s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+        
+        @keyframes textReveal {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Floating spice decorations */
+        .spice-decoration {
+            position: absolute;
+            font-size: 18px;
+            opacity: 0.15;
+            animation: float 8s ease-in-out infinite;
+            z-index: -1;
+            color: #376701;
+        }
+        
+        .spice-1 { top: 10%; left: 5%; animation-delay: 0s; }
+        .spice-2 { top: 20%; right: 10%; animation-delay: 1s; }
+        .spice-3 { bottom: 15%; left: 15%; animation-delay: 2s; }
+        .spice-4 { bottom: 30%; right: 7%; animation-delay: 3s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
